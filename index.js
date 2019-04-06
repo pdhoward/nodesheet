@@ -39,8 +39,8 @@ function appendData(auth) {
     var sheets = google.sheets('v4');
     sheets.spreadsheets.values.append({
       auth: auth,
-      spreadsheetId: 'yourSpreadSheetIDHere',
-      range: 'Sheet1!A2:B', //Change Sheet1 if your worksheet's name is something else
+      spreadsheetId: gsId,
+      range: 'Sheet1!A3:B', //Change Sheet1 if your worksheet's name is something else
       valueInputOption: "USER_ENTERED",
       resource: {
         values: [ ["Void", "Canvas", "Website"], ["Paul", "Shan", "Human"] ]
@@ -64,7 +64,7 @@ function addSheet(auth) {
       auth: auth,
       resource: {
           properties:{
-              title: "Anything-you-name"
+              title: "nodesheettest"
           }
       }
     }, (err, response) => {
@@ -82,11 +82,11 @@ authentication.authenticate().then((auth)=>{
   getData(auth);
 });
  
-/*
+
 authentication.authenticate().then((auth)=>{
   appendData(auth);
 });
-   
+/*
 authentication.authenticate().then((auth)=>{
   addSheet(auth);
  });
