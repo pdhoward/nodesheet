@@ -1,6 +1,6 @@
 
-let google = require('googleapis');
-let authentication = require("./authentication");
+const {google} = require('googleapis');
+const authentication = require("./authentication");
 
 // nodesheet demo
 // https://docs.google.com/spreadsheets/d/1EXYgPBj8QvdlulJEzN13mMliZd1B8EuF2DwQx7Zt5YU/edit#gid=0
@@ -20,7 +20,9 @@ function getData(auth) {
       console.log('The API returned an error: ' + err);
       return;
     } 
-    var rows = response.values;
+    console.log(`spreadsheet response`)
+    console.log(response)
+    var rows = response.data.values;
     if (rows.length === 0) {
       console.log('No data found.');
     } else {
@@ -76,9 +78,7 @@ function addSheet(auth) {
   }
 
    
-authentication.authenticate().then((auth)=>{
-  console.log('this executed')
-  console.log(auth)
+authentication.authenticate().then((auth)=>{ 
   getData(auth);
 });
  
