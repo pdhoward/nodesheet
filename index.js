@@ -37,6 +37,7 @@ function getData(auth) {
 //////
 function appendData(auth) {
     var sheets = google.sheets('v4');
+
     sheets.spreadsheets.values.append({
       auth: auth,
       spreadsheetId: gsId,
@@ -53,6 +54,21 @@ function appendData(auth) {
           console.log("Appended");
       }
     });
+
+    sheets.spreadsheets.values.append({
+      spreadsheetId: gsId,
+      range: 'Sheet1',
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS',
+      resource: {
+        values: [
+          [new Date().toISOString(), "Date", "Time Pending"]
+        ],
+      },
+      auth: auth
+    }, (err, response) => {
+      if (err) return console.error(err)
+    })
   }
   
 
@@ -80,11 +96,13 @@ function addSheet(auth) {
    
 authentication.authenticate().then((auth)=>{ 
   getData(auth);
-});
- 
+}); 
 
 authentication.authenticate().then((auth)=>{
-  appendData(auth);
+  //appendData(auth);
+  setInterval(() => {
+    appendData(auth)
+  }, 5000 )
 });
 
 authentication.authenticate().then((auth)=>{
