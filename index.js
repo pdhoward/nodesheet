@@ -4,12 +4,14 @@ let authentication = require("./authentication");
 
 // nodesheet demo
 // https://docs.google.com/spreadsheets/d/1EXYgPBj8QvdlulJEzN13mMliZd1B8EuF2DwQx7Zt5YU/edit#gid=0
+
+let gsId = '1EXYgPBj8QvdlulJEzN13mMliZd1B8EuF2DwQx7Zt5YU'
  
 function getData(auth) {
   var sheets = google.sheets('v4');
   sheets.spreadsheets.values.get({
     auth: auth,
-    spreadsheetId: 'yourSpreadSheetIDHere',
+    spreadsheetId: gsId,
     range: 'Sheet1!A2:C', //Change Sheet1 if your worksheet's name is something else
   }, (err, response) => {
     if (err) {
