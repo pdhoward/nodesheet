@@ -5,6 +5,8 @@ let authentication = require("./authentication");
 // nodesheet demo
 // https://docs.google.com/spreadsheets/d/1EXYgPBj8QvdlulJEzN13mMliZd1B8EuF2DwQx7Zt5YU/edit#gid=0
 
+// https://github.com/googleapis/google-api-nodejs-client/blob/master/samples/sheets/quickstart.js
+
 let gsId = '1EXYgPBj8QvdlulJEzN13mMliZd1B8EuF2DwQx7Zt5YU'
  
 function getData(auth) {
