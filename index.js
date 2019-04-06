@@ -86,8 +86,7 @@ authentication.authenticate().then((auth)=>{
 authentication.authenticate().then((auth)=>{
   appendData(auth);
 });
-/*
+
 authentication.authenticate().then((auth)=>{
   addSheet(auth);
  });
-*/
