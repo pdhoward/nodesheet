@@ -29,10 +29,6 @@ function getData(auth) {
     }
   });
 }
- 
-authentication.authenticate().then((auth)=>{
-    getData(auth);
-});
 
 //////
 function appendData(auth) {
@@ -54,10 +50,7 @@ function appendData(auth) {
       }
     });
   }
-   
-  authentication.authenticate().then((auth)=>{
-      appendData(auth);
-  });
+  
 
   ///////  
  
@@ -79,6 +72,15 @@ function addSheet(auth) {
       }
     });
   }
+
+   
+authentication.authenticate().then((auth)=>{
+  getData(auth);
+});
+ 
+authentication.authenticate().then((auth)=>{
+  appendData(auth);
+});
    
   authentication.authenticate().then((auth)=>{
       addSheet(auth);
