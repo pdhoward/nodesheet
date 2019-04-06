@@ -9,6 +9,8 @@ To get client_id and secret you need to perform the following tasks.
 Login to your google account in your browser.
 Use this wizard to create or select a project in the Google Developers Console and automatically turn on the API.
 
+https://console.developers.google.com/flows/enableapi?apiid=sheets.googleapis.com
+
 After landing to the console page, click Continue button.
 Now click on Go to credentials button.
 On the Add credentials to your project page, click the Cancel button.
