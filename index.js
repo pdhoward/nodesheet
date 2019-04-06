@@ -75,13 +75,17 @@ function addSheet(auth) {
 
    
 authentication.authenticate().then((auth)=>{
+  console.log('this executed')
+  console.log(auth)
   getData(auth);
 });
  
+/*
 authentication.authenticate().then((auth)=>{
   appendData(auth);
 });
    
 authentication.authenticate().then((auth)=>{
-      addSheet(auth);
+  addSheet(auth);
  });
+*/

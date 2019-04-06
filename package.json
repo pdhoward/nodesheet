@@ -1,18 +1,10 @@
 {
   "name": "nodesheet",
-  "version": "1.0.11",
-  "description": "Write data to google Sheets",
+  "version": "0.5.0",
+  "description": "Google Sheet functions",
   "main": "index.js",
-  "author": "André Veríssimo",
-  "license": "GPLv3",
-  "bugs": {
-    "url": "https://github.com/averissimo/write2sheet/issues"
-  },
-  "homepage": "https://github.com/averissimo/write2sheet",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/averissimo/write2sheet"
-  },
+  "author": "Strategic Machines",
+  "license": "MIT",  
   "scripts": {
     "test": "xo && mocha"
   },
